@@ -1,0 +1,36 @@
+# Compilação Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Diretórios de build
+bin/
+build/
+out/
+target/
+
+# Logs
+*.log
+
+# Arquivos temporários
+*.tmp
+*.swp
+*~
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Maven / Gradle
+.gradle/
+.mvn/
+dependency-reduced-pom.xml
+
+# Configs locais
+.env
