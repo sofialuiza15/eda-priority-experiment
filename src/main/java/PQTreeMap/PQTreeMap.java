@@ -1,5 +1,3 @@
-package java.src.PQTreeMap;
-
 import java.util.*;
 
 public class PQTreeMap {
