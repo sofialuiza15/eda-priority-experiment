@@ -9,6 +9,10 @@ public class PQTreeMap {
         this.treemap = new TreeMap<>();
     }
 
+    public boolean isEmpty(){
+        return treemap.isEmpty();
+    }
+
     // (permite repetidos)
     public void insert(int element) {
         treemap.put(element, treemap.getOrDefault(element, 0) + 1);
