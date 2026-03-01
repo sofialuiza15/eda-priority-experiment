@@ -19,6 +19,8 @@ public class TestOnlyInsert {
 
         long[] temposHeap = new long[repeticoes];
         long[] temposTree = new long[repeticoes];
+        long[] memoriasHeap = new long[repeticoes];
+        long[] memoriasTree = new long[repeticoes];
 
         System.out.println("[TestOnlyInsert] Preparando dados com " + n + " elementos...");
         System.out.println("Warm-up com " + warmup + " repetições");
@@ -49,13 +51,20 @@ public class TestOnlyInsert {
             }
         }
 
+        Runtime rt = Runtime.getRuntime();
+
         // etapa de medição temporal do método de inserção
 
         for (int rep = 0; rep < repeticoes; rep++) {
 
             System.out.println(" - Repetição " + (rep + 1) + "/" + repeticoes);
+            
+            // ===== Heap =====
 
-            //testando inserção em PQHeap com medição temporal
+            System.gc(); // limpar variáveis sem referência e coisas inúteis
+            long antesHeap = rt.totalMemory() - rt.freeMemory(); // medir a memória ocupada atualmente
+
+            //testando inserção com medição temporal
 
             PQHeap heap = new PQHeap();
 
@@ -65,8 +74,22 @@ public class TestOnlyInsert {
             }
             long fimHeap = System.nanoTime();
             temposHeap[rep] = fimHeap - inicioHeap;
+            
+            // medição da ocupação de memória da PQHeap com ela já populada acima, mede o estado atual.
+            System.gc();
+            long depoisHeap = rt.totalMemory() - rt.freeMemory(); // memória ocupada depois da operação de inserção
+            
+            memoriasHeap[rep] = depoisHeap - antesHeap; // memória efetivamente utilizada na operação de inserção com n elementos
 
-            //testando inserção em PQTreeMap com medição temporal
+            // descarta para liberar antes de medir a Tree
+            heap = null;
+
+            // ===== TreeMap =====
+
+            System.gc();
+            long antesTree = rt.totalMemory() - rt.freeMemory();
+
+            //testando inserção com medição temporal
 
             PQTreeMap tree = new PQTreeMap();
 
@@ -76,8 +99,15 @@ public class TestOnlyInsert {
             }
             long fimTree = System.nanoTime();
             temposTree[rep] = fimTree - inicioTree;
+
+            System.gc();
+            long depoisTree = rt.totalMemory() - rt.freeMemory();
+
+            // medição da ocupação de memória da PQTreeMap com ela já populada acima, mede o estado atual.
+            memoriasTree[rep] = depoisTree - antesTree;
+            tree = null;
         }
 
-        return new TestResults("Inserção Pura", n, temposHeap, temposTree);
+        return new TestResults("Inserção Pura", n, temposHeap, temposTree, memoriasHeap, memoriasTree);
     }
 }
