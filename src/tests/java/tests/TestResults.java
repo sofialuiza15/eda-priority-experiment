@@ -12,7 +12,12 @@ public class TestResults {
     public final long[] memoriasTree; 
 
     public TestResults(String cenario, int tamanho, long[] temposHeap, long[] temposTree) {
-        this(cenario, tamanho, temposHeap, temposTree, null, null);
+        this.cenario = cenario;
+        this.tamanho = tamanho;
+        this.temposHeap = temposHeap;
+        this.temposTree = temposTree;
+        this.memoriasHeap = null;
+        this.memoriasTree = null;
     }
 
     public TestResults(String cenario, int tamanho, long[] temposHeap, long[] temposTree, long[] memoriasHeap, long[] memoriasTree) {
