@@ -42,10 +42,10 @@ public class TestHeavyLoad {
             rodarHeap(heap, operacoes, valores, n);
             temposHeap[rep] = System.nanoTime() - ini;
 
-            // implemente para TreeMap
             PQTreeMap tree = new PQTreeMap();
+            long iniTree = System.nanoTime();
             rodarTreeMap(tree, operacoes, valores, n);
-            temposTree[rep] = System.nanoTime() - ini; 
+            temposTree[rep] = System.nanoTime() - iniTree; 
         }
 
         return new TestResults("Carga Pesada", n, temposHeap, temposTree);
