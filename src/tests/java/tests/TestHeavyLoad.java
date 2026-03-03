@@ -31,7 +31,6 @@ public class TestHeavyLoad {
             valores[i] = rValores.nextInt(n);
         }
 
-        // para Eduarda implementar esses métodos
         for(int w = 0; w < warmup; w++) {
             rodarHeap(new PQHeap(), operacoes, valores, n);
             rodarTreeMap(new PQTreeMap(), operacoes, valores, n);
