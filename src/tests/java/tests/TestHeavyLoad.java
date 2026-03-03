@@ -6,45 +6,45 @@ import implementation.PQTreeMap;
 import java.util.Random;
 public class TestHeavyLoad {
 
-    public static TestResults executeHeavyLoad(int n, int warmup, int repeticoes) {
+    public static TestResults executeHeavyLoad(int n, int warmup, int repetitions) {
 
-        long[] temposHeap = new long[repeticoes];
-        long[] temposTree = new long[repeticoes];
+        long[] temposHeap = new long[repetitions];
+        long[] temposTree = new long[repetitions];
         
         // Precisamos desses dados para impedir que o custo do random seja contabilizado
         // usarem a divisão 50% insert, 30% remove, 20% peek
-        int[] operacoes = new int[n];
-        int[] valores = new int[n];
+        int[] operations = new int[n];
+        int[] values = new int[n];
         
-        Random rOperacoes = new Random(42);
-        Random rValores = new Random(42);
+        Random rOperations = new Random(42);
+        Random rValues = new Random(42);
         for(int i = 0; i < n; i++) {
-            int v = rOperacoes.nextInt(10);
+            int v = rOperations.nextInt(10);
             if (v < 5) {
-                operacoes[i] = 0; // insert
+                operations[i] = 0; // insert, números de 0 a 4
             } else if (v < 8) {
-                operacoes[i] = 1; // remove
+                operations[i] = 1; // remove, números de 5 a 7
             } else {
-                operacoes[i] = 2; // peek
+                operations[i] = 2; // peek, números de 8 a 9
             }
 
-            valores[i] = rValores.nextInt(n);
+            values[i] = rValues.nextInt(n);
         }
 
         for(int w = 0; w < warmup; w++) {
-            rodarHeap(new PQHeap(), operacoes, valores, n);
-            rodarTreeMap(new PQTreeMap(), operacoes, valores, n);
+            rodarHeap(new PQHeap(), operations, values, n);
+            rodarTreeMap(new PQTreeMap(), operations, values, n);
         }
 
-        for(int rep = 0; rep < repeticoes; rep++) {
+        for(int rep = 0; rep < repetitions; rep++) {
             PQHeap heap = new PQHeap();
             long ini = System.nanoTime();
-            rodarHeap(heap, operacoes, valores, n);
+            rodarHeap(heap, operations, values, n);
             temposHeap[rep] = System.nanoTime() - ini;
 
             PQTreeMap tree = new PQTreeMap();
             long iniTree = System.nanoTime();
-            rodarTreeMap(tree, operacoes, valores, n);
+            rodarTreeMap(tree, operations, values, n);
             temposTree[rep] = System.nanoTime() - iniTree; 
         }
 
@@ -52,20 +52,20 @@ public class TestHeavyLoad {
 
     }
 
-    private static void rodarHeap(PQHeap heap, int[] operacoes, int[] valores, int n) {
+    private static void rodarHeap(PQHeap heap, int[] operations, int[] values, int n) {
         for (int i = 0; i < n; i++) {
-            switch (operacoes[i]) {
-                case 0 -> heap.enqueue(valores[i]);
+            switch (operations[i]) {
+                case 0 -> heap.enqueue(values[i]);
                 case 1 -> {if (!heap.isEmpty()) heap.dequeue();}
                 case 2 -> {if (!heap.isEmpty()) heap.peek();}
             }
         }
     }
     
-    private static void rodarTreeMap(PQTreeMap tree, int[] operacoes, int[] valores, int n) {
+    private static void rodarTreeMap(PQTreeMap tree, int[] operations, int[] values, int n) {
         for (int i = 0; i < n; i++) {
-            switch (operacoes[i]) {
-                case 0 -> tree.insert(valores[i]);
+            switch (operations[i]) {
+                case 0 -> tree.insert(values[i]);
                 case 1 -> {if (!tree.isEmpty()) tree.remove();}
                 case 2 -> {if (!tree.isEmpty()) tree.peek();}
             }
