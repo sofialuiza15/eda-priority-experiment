@@ -58,8 +58,6 @@ public class TestOnlyInsert {
         for (int rep = 0; rep < repeticoes; rep++) {
 
             System.out.println(" - Repetição " + (rep + 1) + "/" + repeticoes);
-            
-            // ===== Heap =====
 
             System.gc(); // limpar variáveis sem referência e coisas inúteis
             long antesHeap = rt.totalMemory() - rt.freeMemory(); // medir a memória ocupada atualmente
@@ -83,8 +81,6 @@ public class TestOnlyInsert {
 
             // descarta para liberar antes de medir a Tree
             heap = null;
-
-            // ===== TreeMap =====
 
             System.gc();
             long antesTree = rt.totalMemory() - rt.freeMemory();
