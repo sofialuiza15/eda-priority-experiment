@@ -47,7 +47,7 @@ public class TestHeavyLoad {
             rodarTreeMap(new PQTreeMap(), operations, values, n);
         }
 
-        // Aqui o tempo do Heap e da TreeMap começam a serem gravados
+        // Aqui o tempo do Heap e da TreeMap começam a ser gravados
         // O warmup não é medido temporariamente 
         for(int rep = 0; rep < repetitions; rep++) {
             PQHeap heap = new PQHeap();
@@ -86,7 +86,7 @@ public class TestHeavyLoad {
     /**
      * Método interno para analisar o caso que deve operar
      * 
-     * @param heap Estrutura a ser comparada
+     * @param TreeMap Estrutura a ser comparada
      * @param operations Array de operações guardadas
      * @param values Array de valores guardados
      * @param n Número de repetições do teste
