@@ -6,16 +6,26 @@ import implementation.PQTreeMap;
 import java.util.Random;
 public class TestHeavyLoad {
 
+    /**
+     * Executa os testes de "carga pesada"
+     * Testes reais com entradas gravadas
+     * 
+     * @param n Número de elementos que depois serão determinados randomicamente
+     * @param warmup Número de execuções de aquecimento que não têm medição temporal
+     * @param repeticoes Número de repetições do teste
+     * @return
+     */
     public static TestResults executeHeavyLoad(int n, int warmup, int repetitions) {
 
         long[] temposHeap = new long[repetitions];
         long[] temposTree = new long[repetitions];
         
         // Precisamos desses dados para impedir que o custo do random seja contabilizado
-        // usarem a divisão 50% insert, 30% remove, 20% peek
+        // usaremos a divisão 50% insert, 30% remove, 20% peek
         int[] operations = new int[n];
         int[] values = new int[n];
         
+        // Conjunto com tamanho fixo de dados gerados de forma randomica
         Random rOperations = new Random(42);
         Random rValues = new Random(42);
         for(int i = 0; i < n; i++) {
@@ -31,11 +41,14 @@ public class TestHeavyLoad {
             values[i] = rValues.nextInt(n);
         }
 
+        // Aquecimento do warmup
         for(int w = 0; w < warmup; w++) {
             rodarHeap(new PQHeap(), operations, values, n);
             rodarTreeMap(new PQTreeMap(), operations, values, n);
         }
 
+        // Aqui o tempo do Heap e da TreeMap começam a serem gravados
+        // O warmup não é medido temporariamente 
         for(int rep = 0; rep < repetitions; rep++) {
             PQHeap heap = new PQHeap();
             long ini = System.nanoTime();
@@ -52,6 +65,14 @@ public class TestHeavyLoad {
 
     }
 
+    /**
+     * Método interno para analisar o caso que deve operar
+     * 
+     * @param heap Estrutura a ser comparada
+     * @param operations Array de operações guardadas
+     * @param values Array de valores guardados
+     * @param n Número de repetições do teste
+     */
     private static void rodarHeap(PQHeap heap, int[] operations, int[] values, int n) {
         for (int i = 0; i < n; i++) {
             switch (operations[i]) {
@@ -62,6 +83,14 @@ public class TestHeavyLoad {
         }
     }
     
+    /**
+     * Método interno para analisar o caso que deve operar
+     * 
+     * @param heap Estrutura a ser comparada
+     * @param operations Array de operações guardadas
+     * @param values Array de valores guardados
+     * @param n Número de repetições do teste
+     */
     private static void rodarTreeMap(PQTreeMap tree, int[] operations, int[] values, int n) {
         for (int i = 0; i < n; i++) {
             switch (operations[i]) {
