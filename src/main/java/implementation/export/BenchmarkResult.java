@@ -35,6 +35,7 @@ public class BenchmarkResult {
 
     @Override
     public String toString(){
-        return String.format("[%s | %s | size = %d | %4f ms]")
+        return String.format("[%s | %s | size = %d | %.4f ms]",
+        testName, structure, dataSize, getMsSec());
     }
 }
