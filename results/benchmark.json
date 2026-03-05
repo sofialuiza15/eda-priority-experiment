@@ -1,0 +1,401 @@
+[
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":1000,"elapsedMs":0,1097},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,4206},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":1000,"elapsedMs":0,2065},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,4213},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":1000,"elapsedMs":0,1696},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,4364},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":1000,"elapsedMs":0,1641},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,4831},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":1000,"elapsedMs":0,1524},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,4937},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":1000,"elapsedMs":0,3935},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,1746},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":1000,"elapsedMs":0,2704},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,1694},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":1000,"elapsedMs":0,4100},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,1736},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":1000,"elapsedMs":0,2679},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,1815},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":1000,"elapsedMs":0,2685},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,1797},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":1000,"elapsedMs":0,3674},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,4936},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":1000,"elapsedMs":0,3625},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,4809},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":1000,"elapsedMs":0,3614},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,5964},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":1000,"elapsedMs":0,4313},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,5121},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":1000,"elapsedMs":0,3530},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,5285},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":1000,"elapsedMs":0,4124},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,3259},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":1000,"elapsedMs":0,3996},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,4144},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":1000,"elapsedMs":0,4074},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,4130},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":1000,"elapsedMs":0,3718},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,7468},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":1000,"elapsedMs":0,3690},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,3759},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":1000,"elapsedMs":0,1675},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,2611},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":1000,"elapsedMs":0,2939},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,3361},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":1000,"elapsedMs":0,1937},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,2365},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":1000,"elapsedMs":0,1676},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,1777},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":1000,"elapsedMs":0,1824},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":1000,"elapsedMs":0,1823},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":10000,"elapsedMs":0,2212},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":10000,"elapsedMs":2,6925},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":10000,"elapsedMs":0,2291},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":10000,"elapsedMs":2,7140},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":10000,"elapsedMs":0,2247},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":10000,"elapsedMs":2,8974},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":10000,"elapsedMs":0,2176},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":10000,"elapsedMs":3,0632},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":10000,"elapsedMs":0,2220},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":10000,"elapsedMs":2,8574},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":10000,"elapsedMs":1,2728},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":10000,"elapsedMs":1,7428},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":10000,"elapsedMs":1,1408},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":10000,"elapsedMs":1,6249},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":10000,"elapsedMs":1,1281},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":10000,"elapsedMs":2,3503},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":10000,"elapsedMs":1,1218},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":10000,"elapsedMs":1,6681},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":10000,"elapsedMs":1,1238},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":10000,"elapsedMs":1,7421},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":10000,"elapsedMs":0,0501},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":10000,"elapsedMs":0,1605},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":10000,"elapsedMs":0,0524},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":10000,"elapsedMs":0,1502},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":10000,"elapsedMs":0,0510},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":10000,"elapsedMs":0,1429},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":10000,"elapsedMs":0,0508},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":10000,"elapsedMs":0,1421},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":10000,"elapsedMs":0,0524},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":10000,"elapsedMs":0,1437},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":10000,"elapsedMs":1,1447},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":10000,"elapsedMs":4,1948},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":10000,"elapsedMs":1,0702},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":10000,"elapsedMs":3,8108},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":10000,"elapsedMs":1,0950},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":10000,"elapsedMs":3,0203},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":10000,"elapsedMs":0,8693},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":10000,"elapsedMs":3,1374},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":10000,"elapsedMs":0,8041},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":10000,"elapsedMs":2,3639},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":10000,"elapsedMs":0,6503},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":10000,"elapsedMs":1,3191},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":10000,"elapsedMs":0,7275},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":10000,"elapsedMs":1,4837},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":10000,"elapsedMs":0,7488},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":10000,"elapsedMs":1,5122},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":10000,"elapsedMs":0,4709},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":10000,"elapsedMs":1,1094},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":10000,"elapsedMs":0,3398},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":10000,"elapsedMs":1,2631},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":100000,"elapsedMs":2,0218},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":100000,"elapsedMs":48,0158},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":100000,"elapsedMs":1,3384},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":100000,"elapsedMs":39,6918},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":100000,"elapsedMs":1,2129},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":100000,"elapsedMs":51,9787},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":100000,"elapsedMs":1,5219},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":100000,"elapsedMs":49,3142},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":100000,"elapsedMs":1,3659},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":100000,"elapsedMs":48,8469},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":100000,"elapsedMs":8,9576},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":100000,"elapsedMs":7,1666},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":100000,"elapsedMs":9,0429},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":100000,"elapsedMs":7,2667},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":100000,"elapsedMs":9,2450},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":100000,"elapsedMs":7,0146},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":100000,"elapsedMs":9,5694},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":100000,"elapsedMs":7,3081},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":100000,"elapsedMs":8,9756},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":100000,"elapsedMs":4,4489},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":100000,"elapsedMs":0,0417},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":100000,"elapsedMs":0,0691},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":100000,"elapsedMs":0,0014},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":100000,"elapsedMs":0,0673},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":100000,"elapsedMs":0,0014},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":100000,"elapsedMs":0,0756},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":100000,"elapsedMs":0,0014},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":100000,"elapsedMs":0,0807},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":100000,"elapsedMs":0,0010},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":100000,"elapsedMs":0,0682},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":100000,"elapsedMs":9,7108},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":100000,"elapsedMs":32,8542},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":100000,"elapsedMs":9,6228},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":100000,"elapsedMs":32,9670},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":100000,"elapsedMs":8,4723},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":100000,"elapsedMs":29,6541},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":100000,"elapsedMs":8,3500},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":100000,"elapsedMs":29,2645},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":100000,"elapsedMs":8,5961},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":100000,"elapsedMs":27,6123},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":100000,"elapsedMs":3,3265},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":100000,"elapsedMs":10,4950},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":100000,"elapsedMs":3,2205},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":100000,"elapsedMs":9,5453},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":100000,"elapsedMs":3,0000},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":100000,"elapsedMs":9,9381},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":100000,"elapsedMs":3,0026},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":100000,"elapsedMs":8,9476},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":100000,"elapsedMs":2,9849},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":100000,"elapsedMs":9,7828},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":1000000,"elapsedMs":15,0541},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":857,1050},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":1000000,"elapsedMs":16,0922},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":782,7368},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":1000000,"elapsedMs":15,4262},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":753,2998},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":1000000,"elapsedMs":16,6902},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":768,8223},
+]
+  {"testName":"Inserção Pura","structure":"PQHeap","dataSize":1000000,"elapsedMs":13,7943},
+]
+  {"testName":"Inserção Pura","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":742,3908},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":1000000,"elapsedMs":156,3140},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":87,3245},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":1000000,"elapsedMs":157,0529},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":81,3339},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":1000000,"elapsedMs":154,2142},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":63,9834},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":1000000,"elapsedMs":151,7201},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":55,4098},
+]
+  {"testName":"Remoção Pura","structure":"PQHeap","dataSize":1000000,"elapsedMs":166,2156},
+]
+  {"testName":"Remoção Pura","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":66,2181},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":1000000,"elapsedMs":0,0010},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":0,1178},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":1000000,"elapsedMs":0,0014},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":0,1000},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":1000000,"elapsedMs":0,0019},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":0,1048},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":1000000,"elapsedMs":0,0014},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":0,1003},
+]
+  {"testName":"Peek Puro","structure":"PQHeap","dataSize":1000000,"elapsedMs":0,0014},
+]
+  {"testName":"Peek Puro","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":0,1173},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":1000000,"elapsedMs":131,9477},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":437,5972},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":1000000,"elapsedMs":128,9215},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":466,2349},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":1000000,"elapsedMs":133,2672},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":474,6165},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":1000000,"elapsedMs":133,2702},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":484,8934},
+]
+  {"testName":"Operações Mistas","structure":"PQHeap","dataSize":1000000,"elapsedMs":134,3212},
+]
+  {"testName":"Operações Mistas","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":534,4661},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":1000000,"elapsedMs":39,2070},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":165,1657},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":1000000,"elapsedMs":43,5423},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":175,1031},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":1000000,"elapsedMs":33,9385},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":164,5811},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":1000000,"elapsedMs":34,1710},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":164,1525},
+]
+  {"testName":"Carga Pesada","structure":"PQHeap","dataSize":1000000,"elapsedMs":34,2773},
+]
+  {"testName":"Carga Pesada","structure":"PQTreeMap","dataSize":1000000,"elapsedMs":170,8686}
+]
