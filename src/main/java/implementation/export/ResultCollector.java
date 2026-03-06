@@ -30,4 +30,7 @@ public class ResultCollector {
             System.out.println(r.toString());
         }
     }
+
+    public class Result {
+    }
 }

@@ -3,49 +3,35 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
-# 1. Carregar os dados ignorando espaços extras
-df = pd.read_csv('results/benchmark.csv', skipinitialspace=True)
+CSV_PATH = 'results/benchmark.csv'
+OUTPUT_DIR = 'plots'
 
-# 2. GARANTIR QUE OS DADOS SÃO NÚMEROS (Resolve o ziguezague)
-df['datasize'] = pd.to_numeric(df['datasize'], errors='coerce')
-df['msSec'] = pd.to_numeric(df['msSec'], errors='coerce')
-df = df.dropna() # Remove qualquer linha com erro
+def gerar_graficos():
+    if not os.path.exists(CSV_PATH):
+        print(f"O Arquivo {CSV_PATH} não foi encontrado.")
+        return
 
-# 3. ORDENAR (Vital para as linhas não cruzarem a tela)
-df = df.sort_values(by=['testName', 'structure', 'datasize'])
+    if not os.path.exists(OUTPUT_DIR):
+        os.makedirs(OUTPUT_DIR)
 
-# 4. Criar pasta de gráficos
-if not os.path.exists('plots'):
-    os.makedirs('plots')
+    df = pd.read_csv(CSV_PATH)
+    sns.set_theme(style="whitegrid")
 
-# 5. Configurar o estilo
-sns.set_theme(style="whitegrid")
-testes = df['testName'].unique()
+    for teste in df['testName'].unique():
+        plt.figure(figsize=(10, 6))
+        dados = df[df['testName'] == teste]
+        
+        sns.lineplot(data=dados, x='datasize', y='msSec', hue='structure', marker='o', linewidth=2)
+        
+        plt.title(f'Desempenho: {teste}', fontsize=14, fontweight='bold')
+        plt.xlabel('N (Elementos)')
+        plt.ylabel('Tempo (ms)')
+        plt.xscale('log') # Escala logarítmica para N
+        
+        nome_img = f"{OUTPUT_DIR}/resultado_{teste.lower().replace(' ', '_')}.png"
+        plt.savefig(nome_img, bbox_inches='tight')
+        plt.close()
+        print(f"Gráfico gerado: {nome_img}")
 
-for teste in testes:
-    plt.figure(figsize=(10, 6))
-    data_teste = df[df['testName'] == teste]
-    
-    # O segredo: hue='structure' separa por cor, x='datasize' ordena o eixo X
-    sns.lineplot(
-        data=data_teste, 
-        x='datasize', 
-        y='msSec', 
-        hue='structure', 
-        style='structure', # Estilo diferente para cada linha
-        markers=True, 
-        dashes=False,
-        linewidth=2.5
-    )
-    
-    plt.title(f'Performance: {teste}', fontsize=14)
-    plt.xlabel('Tamanho da Amostra (N)')
-    plt.ylabel('Tempo (ms)')
-    
-    # Escala logarítmica para ver bem de 1k até 1M
-    plt.xscale('log') 
-    
-    plt.savefig(f"plots/resultado_{teste.lower().replace(' ', '_')}.png")
-    plt.close()
-
-print("🚀 Gráficos corrigidos! Agora as linhas devem estar separadas por estrutura.")
+if __name__ == "__main__":
+    gerar_graficos()
