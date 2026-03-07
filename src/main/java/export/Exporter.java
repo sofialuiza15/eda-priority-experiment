@@ -8,8 +8,17 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.Locale;
 
+/**Classe responsável por exportar os dados obtidos através dos testes 
+para arquivos CSV e JSON, a fim de possibilitar plotagem dos gráficos"
+*/
 public class Exporter {
 
+    /**
+     * Método responsável por exportar os dados em formato .csv
+     * @param resultados representa uma lista com todos os testes armazenados 
+     * @param caminho o caminho para a criação do arquivo contendo os resultados
+     * exportados para o formato solicitado
+     */
     public void paraCSV(List<TestResults> resultados, String caminho) {
         File arquivo = new File(caminho);
         File pai = arquivo.getParentFile();
@@ -35,7 +44,13 @@ public class Exporter {
         }
     }
 
-    public void paraJSON(List<TestResults> resultados, String caminho) throws IOException {
+    /**
+     * Método responsável por exportar os dados em formato .json
+     * @param resultados representa uma lista com todos os testes armazenados
+     * @param caminho o caminho para a criação do arquivo contendo os resultados
+     * exportados para o formato solicitado
+     */
+    public void paraJSON(List<TestResults> resultados, String caminho) {
         File arquivo = new File(caminho);
         File pai = arquivo.getParentFile();
 
