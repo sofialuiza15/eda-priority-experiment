@@ -28,6 +28,7 @@ Thumbs.db
 dependency-reduced-pom.xml
 
 # Configs locais
+venv/
 .env
 # Ignore Gradle project-specific cache directory
 .gradle
