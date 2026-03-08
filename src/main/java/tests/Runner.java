@@ -106,7 +106,7 @@ public class Runner{
         System.out.printf("    %-12s  média: %,14.0f bytes  ± %,.0f%n", "PQTreeMap", mediaTree, dpTree);
     }
 
-    // Calcula e exibe qual estrutura foi mais rápida e por quanto.
+    // Calcula e exibe qual estrutura foi mais rápida e por quanto. 
     private static void imprimirVencedor(TestResults r) {
         double mH = r.media(r.temposHeap);
         double mT = r.media(r.temposTree);
@@ -120,8 +120,8 @@ public class Runner{
         }
     }
 
-    
     // Utilitários de formatação
+
     private static void printBanner() {
         printSeparador('*', 70);
         System.out.println("  EDA — Experimento: Fila de Prioridade");

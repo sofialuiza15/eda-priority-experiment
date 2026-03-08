@@ -1,25 +1,107 @@
-# eda-priority-experiment
+# EDA — Experimento: Fila de Prioridade
 
-Considerando as propriedades de ordenação e acesso a elementos caracterizados na disciplina, o projeto tem como objetivo comparar o desempenho e a eficiência de memória entre a fila de prioridade (Heap Binária) e a Árvore de Busca (TreeMap) na linguagem Java. Explorando o comportamento dessas estruturas em cenários de grande fluxo de dados e operações de busca e remoção, onde a eficiência de cada uma será analisada e posta à prova.
+Benchmark comparando duas implementações de fila de prioridade:
+- **PQHeap** — baseada em heap binário
+- **PQTreeMap** — baseada em árvore (TreeMap)
 
-As estruturas analisadas serão:
- - Heap Binária (PriorityQueue)
- - TreeMap (Árvore PV)
+Os testes medem tempo de execução e uso de memória em cinco cenários, com três tamanhos de entrada (1.000, 10.000 e 100.000 elementos).
 
-**Objetivo**
+---
 
-	Temos como objetivo central do nosso projeto, realizar uma análise comparativa do desempenho e eficiência de memória entre TreeMap e Heap com fila de prioridade. A proposta busca analisar experimentalmente as duas estruturas de dados sob efeitos de grandes fluxos de informações, como entradas grandes, pequenas, operações de inserção e remoção, e verificação do próximo elemento da fila a sair sem removê-lo (peek). Com isso, pretendemos que seja possível identificar particularidades, como as vantagens e desvantagens, e tempo médio de resposta para operações. A realização será avaliada por meio de gráficos e métricas reais em nanosegundos (visto que, operações em Java são muito rápidas). A comparação é objetivada em visualizar quais cenários essas estruturas se superam em eficiência.
+## Pré-requisitos
 
-**Metodologia** 
+### Java
+- Java 17 ou superior
+- Gradle (via wrapper `./gradlew`, já incluído no projeto)
 
- 1- Implementação das estruturas
- 
-  Para este projeto utilizaremos as implementações nativas da Java Collection(TreeMap e PriorityQueue) com o objetivo de utilizar estruturas já otimizadas e testadas que trarão melhor confiabilidade para os resultados. A estrutura Heap já está implementada na própria PriorityQueue, eliminando a necessidade de uma implementação própria.
+### Python
+- Python 3.8 ou superior
+- Dependências listadas em `requirements.txt`
 
- 2- Definição dos cenários
+---
 
-  Os testes foram organizados em cinco cenários principais: inserções puras (simulando carregamento inicial de dados), remoções puras (esvaziamento completo da estrutura), operações mistas com proporções equilibradas (uso comum do sistema), operações de peek (consulta sem remoção) e carga totalmente aleatória (simulando situações de stress). As entradas serão geradas aleatoriamente para evitar vieses e garantir imparcialidade, utilizando tamanhos em progressão logarítmica — 1.000, 10.000, 100.000 e 1.000.000 de elementos — permitindo observar desde pequenos volumes até testes de escalabilidade e possíveis gargalos, além de facilitar a visualização em gráficos. Cada teste será repetido cinco vezes, número considerado mínimo para confiabilidade estatística, possibilitando calcular média e desvio padrão, reduzir impactos de variações da máquina virtual e identificar possíveis outliers, mantendo equilíbrio entre precisão e tempo de execução.
- 
- 3- Definição de métricas 
+## Instalação
 
-  Estabelecemos métricas comumente utilizadas na avaliação de algoritmos e estruturas, a fim de que sejam classificadas para determinados usos, de modo que tenham aproveitamento máximo. Como métrica de comparação entre as estruturas (heap e treemap) utilizadas como fila de prioridade, determinamos medir o desempenho em determinados cenários, o tempo de execução em operações específicas e o uso de memória por ambas as estruturas. Para que essas métricas sejam avaliadas corretamente, teremos métodos implementados para salvar, medir e comparar os dados recolhidos
+### 1. Dependências Python
+
+```bash
+# Crie e ative um ambiente virtual
+python3 -m venv venv
+source venv/bin/activate
+
+# Instale as dependências
+pip install -r requirements.txt
+```
+
+> Se receber erro de `externally-managed-environment`, instale o venv primeiro:
+> ```bash
+> sudo apt install python3.12-venv
+> ```
+
+### 2. Dependências Java
+
+As dependências Java (incluindo JOL para medição de memória) são baixadas automaticamente pelo Gradle na primeira execução.
+
+---
+
+## Como rodar
+
+### 1. Executar os benchmarks
+
+```bash
+./gradlew clean run
+```
+
+Isso compila o projeto, roda todos os testes e exporta os resultados para:
+- `results/benchmark.csv`
+- `results/benchmark.json`
+
+### 2. Gerar os gráficos
+
+Com o ambiente virtual ativado:
+
+```bash
+source venv/bin/activate
+python3 plot.py
+```
+
+Os gráficos são salvos na pasta `plots/`.
+
+---
+
+## Estrutura dos testes
+
+| Teste | Descrição |
+|---|---|
+| Inserção Pura | Insere n elementos aleatórios. Mede tempo e memória. |
+| Remoção Pura | Insere n elementos e remove todos. Mede tempo. |
+| Peek Puro | Consulta o topo da fila 100.000 vezes. Mede tempo. |
+| Operações Mistas | Alterna insert e remove aleatoriamente. Mede tempo. |
+| Carga Pesada | 50% insert, 30% remove, 20% peek. Mede tempo. |
+
+Cada teste usa:
+- **5 repetições de warmup** (sem medição) para aquecer a JVM
+- **10 repetições medidas** para cálculo de média e desvio padrão
+
+---
+
+## Configuração
+
+As configurações dos experimentos ficam no topo de `src/main/java/tests/Main.java`:
+
+```java
+static final int[] TAMANHOS      = { 1_000, 10_000, 100_000 };
+static final int   WARMUP        = 5;
+static final int   REPETICOES    = 10;
+static final int   REPETICOES_PEEK = 100_000;
+```
+
+---
+
+## Observações
+
+- Ainda falta consertar o peek.
+- A medição de memória usa [JOL (Java Object Layout)](https://openjdk.org/projects/code-tools/jol/), que percorre o grafo completo de objetos da estrutura para calcular o tamanho real.
+- O benchmark é projetado para minimizar interferências externas, mas resultados podem variar dependendo do ambiente de execução (CPU, RAM, carga do sistema).
+- Resultados são exportados em CSV e JSON para facilitar análise posterior.
+- Pode aparecer um aviso `WARNING: Unable to attach Serviceability Agent` durante a execução — é inofensivo e não afeta os resultados.

@@ -1,6 +1,8 @@
 package tests;
 import java.util.Random;
 
+import org.openjdk.jol.info.GraphLayout;
+
 import implementation.PQHeap;
 import implementation.PQTreeMap;
 
@@ -36,34 +38,27 @@ public class TestOnlyInsert {
         // o warm-up não é medido temporalmente
         for (int w = 0; w < warmup; w++) {
 
-            //fila de prioridade com heap
-
+            // fila de prioridade com heap
             PQHeap heap = new PQHeap();
             for (int i = 0; i < n; i++) {
                 heap.enqueue(dados[i]);
             }
 
-            //fila de prioridade com treemap
-
+            // fila de prioridade com treemap
             PQTreeMap tree = new PQTreeMap();
             for (int i = 0; i < n; i++) {
                 tree.insert(dados[i]);
             }
         }
 
-        Runtime rt = Runtime.getRuntime();
-
-        // etapa de medição temporal do método de inserção
-
+        // etapa de medição temporal e de memória do método de inserção
         for (int rep = 0; rep < repeticoes; rep++) {
 
             System.out.println(" - Repetição " + (rep + 1) + "/" + repeticoes);
 
-            System.gc(); // limpar variáveis sem referência e coisas inúteis
-            long antesHeap = rt.totalMemory() - rt.freeMemory(); // medir a memória ocupada atualmente
 
-            //testando inserção com medição temporal
 
+            //Heap
             PQHeap heap = new PQHeap();
 
             long inicioHeap = System.nanoTime();
@@ -72,21 +67,18 @@ public class TestOnlyInsert {
             }
             long fimHeap = System.nanoTime();
             temposHeap[rep] = fimHeap - inicioHeap;
-            
-            // medição da ocupação de memória da PQHeap com ela já populada acima, mede o estado atual.
-            System.gc();
-            long depoisHeap = rt.totalMemory() - rt.freeMemory(); // memória ocupada depois da operação de inserção
-            
-            memoriasHeap[rep] = depoisHeap - antesHeap; // memória efetivamente utilizada na operação de inserção com n elementos
 
-            // descarta para liberar antes de medir a Tree
-            heap = null;
+            // usa uma API interna da JVM chamada Instrumentation que consegue medir o tamanho real de qualquer objeto diretamente
+            // sem depender do GC nem do estado geral da heap.
+            //faz bem mais sentido e é bem mais confiável pra a gente, já que o GC não nos obedecia (afrontoso)!!
+            memoriasHeap[rep] = GraphLayout.parseInstance(heap).totalSize();
 
-            System.gc();
-            long antesTree = rt.totalMemory() - rt.freeMemory();
 
-            //testando inserção com medição temporal
+            heap = null; // descarta para não interferir na medição da Tree
 
+
+
+            // TreeMap
             PQTreeMap tree = new PQTreeMap();
 
             long inicioTree = System.nanoTime();
@@ -96,11 +88,9 @@ public class TestOnlyInsert {
             long fimTree = System.nanoTime();
             temposTree[rep] = fimTree - inicioTree;
 
-            System.gc();
-            long depoisTree = rt.totalMemory() - rt.freeMemory();
+            // mesma lógica: percorre todo o grafo de objetos da TreeMap
+            memoriasTree[rep] = GraphLayout.parseInstance(tree).totalSize();
 
-            // medição da ocupação de memória da PQTreeMap com ela já populada acima, mede o estado atual.
-            memoriasTree[rep] = depoisTree - antesTree;
             tree = null;
         }
 
