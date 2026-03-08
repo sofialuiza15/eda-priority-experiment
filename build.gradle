@@ -1,10 +1,21 @@
 plugins {
     id 'java'
-    id 'application'          
+    id 'application'
 }
+
 application {
-    mainClass = 'tests.Runner'  
+    mainClass = 'tests.Runner'
+    applicationDefaultJvmArgs = ['-Djdk.attach.allowAttachSelf=true']
 }
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.openjdk.jol:jol-core:0.17'
+}
+
 sourceSets {
     main {
         java { srcDirs = ['src/main/java'] }
