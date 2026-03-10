@@ -9,7 +9,7 @@ public class Runner{
     // Configuração dos experimentos
 
     // Tamanhos de entrada a serem testados
-    static final int[] TAMANHOS = { 1_000, 10_000, 100_000 };
+    static final int[] TAMANHOS = { 1_000, 10_000, 100_000, 1_000_000, 10_000_000 };
 
     //Repetições de warm-up (sem medição) 
     static final int WARMUP = 5;
@@ -21,7 +21,7 @@ public class Runner{
      * Repetições internas do peek (operação O(1) muito rápida;
      * repetir muitas vezes reduz ruído estatístico).
      */
-    static final int REPETICOES_PEEK = 100_000;
+    static final int REPETICOES_PEEK = 10_000_000;
 
     public static void main(String[] args) {
 
