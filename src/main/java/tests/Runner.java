@@ -9,12 +9,17 @@ public class Runner{
     // Configuração dos experimentos
 
     // Tamanhos de entrada a serem testados
-    static final int[] TAMANHOS = { 1_000, 10_000, 100_000, 1_000_000, 10_000_000 };
+    static final int[] TAMANHOS = {
+        1_000, 3_000, 5_000, 8_000, 10_000,
+        30_000, 50_000, 80_000, 100_000,
+        300_000, 500_000, 800_000, 1_000_000,
+        3_000_000, 5_000_000
+    };
 
     //Repetições de warm-up (sem medição) 
     static final int WARMUP = 5;
 
-    // Repetições com medição real(devemos mudar essa quantidade, mas pra quanto?) 
+    // Repetições com medição real 
     static final int REPETICOES = 10;
 
     /**
