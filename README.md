@@ -1,6 +1,8 @@
 # EDA — Experimento: Fila de Prioridade
 
-Benchmark comparando duas implementações de fila de prioridade:
+Benchmark de desempenho comparando duas implementações de fila de prioridade max-heap para avaliar qual estrutura oferece melhor eficiência em diferentes cenários de uso e volumes de dados.
+
+**Implementações avaliadas**
 - **PQHeap** — baseada em heap binário
 - **PQTreeMap** — baseada em árvore (TreeMap)
 
@@ -87,13 +89,18 @@ Os gráficos são salvos na pasta `plots/`.
 
 ## Configuração
 
-As configurações dos experimentos ficam no topo de `src/main/java/tests/Main.java`:
+As configurações dos experimentos ficam no topo de `src/main/java/tests/Runner.java`:
 
 ```java
-static final int[] TAMANHOS      = { 1_000, 10_000, 100_000 };
+static final int[] TAMANHOS      = {
+        1_000, 3_000, 5_000, 8_000, 10_000,
+        30_000, 50_000, 80_000, 100_000,
+        300_000, 500_000, 800_000, 1_000_000,
+        3_000_000, 5_000_000
+};
 static final int   WARMUP        = 5;
 static final int   REPETICOES    = 10;
-static final int   REPETICOES_PEEK = 100_000;
+static final int   REPETICOES_PEEK = 10_000_000;
 ```
 
 ---
@@ -111,3 +118,4 @@ Para análise detalhada dos resultados e conclusões, consulte o relatório comp
 - Resultados são exportados em CSV e JSON para facilitar análise posterior.
 
 - Pode aparecer um aviso `WARNING: Unable to attach Serviceability Agent` durante a execução — é inofensivo e não afeta os resultados.
+
